@@ -18,3 +18,16 @@ taskForm.addEventListener('submit', function(e) {
     deleteBtn.textContent = 'Eliminar';
     li.appendChild(deleteBtn);
 
+    taskList.appendChild(li);
+    taskInput.value = '';
+
+    // Marcar tarea como completada al hacer clic en el texto
+    li.addEventListener('click', function() {
+        li.classList.toggle('completed');
+    });
+
+    // Eliminar tarea
+    deleteBtn.addEventListener('click', function() {
+        taskList.removeChild(li);
+    });
+});
